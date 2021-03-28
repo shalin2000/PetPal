@@ -1,0 +1,13 @@
+.searchMap {
+    background-color: white;
+    min-height: 100vh; /* will cover the 100% of viewport */
+    /* text-align: center; */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 250px; /* height of your footer */
+}
+
+.center {
+    text-align: center;
+}

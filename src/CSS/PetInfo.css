@@ -1,0 +1,33 @@
+.petInfo {
+    background-color: white;
+    min-height: 100vh; /* will cover the 100% of viewport */
+    /* text-align: center; */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 50px; /* height of your footer */  
+}
+
+.petImg {
+    width: 200px;
+    height: 200px;
+}
+
+.petName{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: teal;
+}
+
+.petInfoCard {
+    box-shadow: 0 4px 8px 0 rgba(248, 4, 4, 0.2);
+    transition: 0.3s;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+.petInfoCard:hover {
+    box-shadow: 10px 5px 5px red;
+}

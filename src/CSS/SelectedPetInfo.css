@@ -1,0 +1,30 @@
+.selectedPetInfo{
+    background-color: white;
+    min-height: 100vh; /* will cover the 100% of viewport */
+    /* text-align: center; */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 50px; /* height of your footer */  
+}
+
+.petImg {
+    width: 200px;
+    height: 200px;
+}
+
+.petName{
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: teal;
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center {
+    text-align: center;
+}

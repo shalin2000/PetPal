@@ -1,0 +1,23 @@
+.reminder {
+    background-color: white;
+    min-height: 100vh; /* will cover the 100% of viewport */
+    /* text-align: center; */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 250px; /* height of your footer */
+}
+
+.my-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.todoContent {
+    text-align: left;
+}
