@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {Card,Button} from 'react-bootstrap'
+import '../CSS/PetCard.css';
 
 class PetCard extends Component{
     constructor(props){
@@ -12,15 +13,18 @@ class PetCard extends Component{
     render(){
         
         return (
-            <div style={{margin:'15px', display:'flex',}}>
-            <Card style={{ width: '18rem',padding:'5px'}}>
-                <Card.Img variant="top" src={this.props.info.img} />
+            <div id="outer-card">
+            <Card id="pcards" >
+                <div style={{border:"red"}}>
+                   <Card.Img variant="top" src={this.props.info.img} /> 
+                </div>
+                
                 <Card.Body>
                         <Card.Title>{this.props.info.title}</Card.Title>
                         <Card.Text>Age: {this.props.info.age}</Card.Text>
                         <Card.Text>Breed: {this.props.info.breed}</Card.Text>
                         <Card.Text>Info: {this.props.info.info}</Card.Text>  
-                    <Button variant="primary" onClick={this.props.info.handleReminder}>New Reminder</Button>
+                    <Button id="new-reminder-button" variant="primary" onClick={this.props.handleAdd}>New Reminder</Button>
                 </Card.Body>
             </Card>
             </div>

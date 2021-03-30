@@ -10,7 +10,7 @@ class Header extends Component {
         return(
             <div className="header"> 
                 <Menu>
-                    <Link to={{pathname: "/"}} className="menu-item"> <FontAwesomeIcon icon={ faHome } size={40}/>&nbsp; Profile </Link>
+                    <Link to={{pathname: "/"}} className="menu-item"> <FontAwesomeIcon icon={ faHome } size={40}/>&nbsp; Profile</Link>
 
                     <Link to={{pathname: "/petInfo"}} className="menu-item"><FontAwesomeIcon icon={ faPaw } size={40}/>&nbsp; Pet Info </Link>
 
