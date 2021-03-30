@@ -1,18 +1,119 @@
 import React, { Component } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import PetCard from './PetCard'
 // import { slide as Menu } from 'react-burger-menu'
 // import {Link} from 'react-router-dom';
 
 import '../CSS/Profile.css';
 import Header from './Header';
+import NewReminder from './NewReminder';
+import NewPet from './NewPet'
+
 
 class Profile extends Component {
 
+
+    
     constructor(props) {
-        super(props);
+        super(props)
+
+
         this.state = {
-            
-        };
+             reminderOpen: false,
+             newPetOpen:false,
+             cards:[
+                {
+                    img:"https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg",
+                    title: "Trev",
+                    age: 2,
+                    breed:"Savannah",
+                    info:"Likes to eat tuna",
+                    
+                },
+                {
+                    img:"http://spectrum-sitecore-spectrumbrands.netdna-ssl.com/~/media/Pet/Furminator/Images/Solution%20Center%20Images/Feature%20Images/husky.jpg",
+                    title: "Jason",
+                    age: 9,
+                    breed:"Husky",
+                    info:"Loves the snow and long walks",
+                    
+                }
+             ],
+        };        
+    }
+
+    // used to set the state with the localstorage saved data
+    componentWillMount(){
+        localStorage.getItem('newCards') && this.setState({
+            reminderOpen: false,
+            newPetOpen:false,
+            cards: JSON.parse(localStorage.getItem('newCards')),
+        })
+    }
+    componentWillUpdate(nextProps, nextState){
+        localStorage.setItem('newCards', JSON.stringify(nextState.cards))
+    }
+
+    // handle opening the new reminders pop up form
+    handleReminder(){
+        
+        this.setState(() => {
+            return {
+             reminderOpen: true,
+             newPetOpen: false,
+             cards: this.state.cards 
+            }
+        })
+     }
+
+    // handle opening the new pet card form
+    handlePetOpen(){
+        this.setState(() => {
+            return {
+             reminderOpen: false,
+             newPetOpen: true,
+             cards: this.state.cards 
+            }
+        })
+     }
+
+    // close the reminders or new pet Modal pop up
+    handleClose (){
+        this.setState(() => {
+            return {
+                reminderOpen: false,
+                newPetOpen:false,
+                cards: this.state.cards
+            }
+        })
+    } 
+    
+    saveReminder (){
+
+    }
+
+    // adds the new pet card to profile page, saving all new pet cards on localstorage
+    handleNewPet(name,age,info,img,breed){
+        const newCards = this.state.cards
+        newCards.push({
+            img:img,
+            title: name,
+            age: age,
+            breed:breed,
+            info:info,
+            handleReminder: this.handleReminder.bind(this)
+        })
+
+         this.setState((event)=>{
+            return {
+                reminderOpen: false,
+                newPetOpen:false,
+                cards: newCards
+            }
+        })
+        //save the new card to local storage for displayment
+        const cards = this.state.cards
+        localStorage.setItem('newCards', JSON.stringify(cards));
     }
 
     render (){
@@ -43,31 +144,32 @@ class Profile extends Component {
                 {/* pet profile card */}
                 <div class="container center">
                     <div class="row justify-content-center" style={{marginTop: '50px'}}>
-                        <Card style={{ width: '18rem'}}>
-                            <Card.Img variant="top" src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg" />
-                            <Card.Body>
-                                <Card.Title>Trev</Card.Title>
-                                <Card.Text>Age: 2</Card.Text>
-                                <Card.Text>Breed: Savannah</Card.Text>
-                                <Card.Text>Info: Likes to eat tuna</Card.Text>
-                                <Button variant="primary">New Reminder</Button>
-                            </Card.Body>
-                        </Card>
-                        <Card style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2020%2F10%2F13%2Fcorgi-dog-POPDOGNAME1020.jpg" />
-                            <Card.Body>
-                                <Card.Title>Jason</Card.Title>
-                                <Card.Text>Age: 9</Card.Text>
-                                <Card.Text>Breed: Husky</Card.Text>
-                                <Card.Text>Info: Loves the snow and long walks</Card.Text>
-                                <Button variant="primary">New Reminder</Button>
-                            </Card.Body>
-                        </Card>
+                     
+                        {this.state.cards.map((card,i )=>{
+                            console.log("returning",this.state)
+                            return (
+                                
+                                <PetCard key={i} info={card}/>
+                            )
+                        })}
+                        
+
+                        <Modal show={this.state.reminderOpen} onHide={this.handleClose.bind(this)}>
+                            <NewReminder handleClose={this.handleClose.bind(this)}/>
+                        </Modal>
+
+                        <Modal show={this.state.newPetOpen} onHide={this.handleClose.bind(this)}>
+                            <NewPet handleClose={this.handleClose.bind(this)} addPetCard={this.handleNewPet.bind(this) } />
+                        </Modal>
                     </div>
                 </div>
                 <br></br>
                 <div class="center">
-                    <button type="button" class="btn btn-primary">Add pets</button>
+                    <button 
+                        type="button" class="btn btn-primary" 
+                        onClick={this.handlePetOpen.bind(this)}
+                        >Add pets
+                    </button>
                 </div>
 
             </div>

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import {Modal} from 'react-bootstrap'
 import Calendar from 'react-calendar';
 
 import '../CSS/Reminders.css';
 import Header from './Header';
 import 'react-calendar/dist/Calendar.css';
+import NewReminder from './NewReminder'
 
 class Reminders extends Component {
 
@@ -11,9 +13,25 @@ class Reminders extends Component {
         super(props);
         this.state = {
             value: null,
+            addReminderOpen: false
         };
     }
 
+    handleReminder(){
+        this.setState(()=>{
+            return{
+                addReminderOpen: true
+            }
+        })
+    }
+
+    handleClose(){
+        this.setState(()=>{
+            return{
+                addReminderOpen: false
+            }
+        })
+    }
     render (){
         var date = new Date().toDateString();
         console.log(date)
@@ -61,8 +79,16 @@ class Reminders extends Component {
                                 <label>..............................</label>
                             </div>
                             <div class="col-md-auto my-auto">
-                                <button type="button" class="btn btn-primary" style={{justifyContent: 'center'}}>Add Reminder</button>
+                                <button 
+                                    type="button" 
+                                    class="btn btn-primary" 
+                                    style={{justifyContent: 'center'}}
+                                    onClick={this.handleReminder.bind(this)}
+                                    >Add Reminder</button>
                             </div>
+                            <Modal show={this.state.addReminderOpen} onHide={this.handleClose.bind(this)}>
+                                <NewReminder handleClose={this.handleClose.bind(this)}/>
+                            </Modal>
                         </div>
                 </div>
             </div> 
