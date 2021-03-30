@@ -28,7 +28,7 @@ class Profile extends Component {
                     age: 2,
                     breed:"Savannah",
                     info:"Likes to eat tuna",
-                    
+                    handleReminder: this.handleReminder.bind(this)
                 },
                 {
                     img:"http://spectrum-sitecore-spectrumbrands.netdna-ssl.com/~/media/Pet/Furminator/Images/Solution%20Center%20Images/Feature%20Images/husky.jpg",
@@ -36,7 +36,7 @@ class Profile extends Component {
                     age: 9,
                     breed:"Husky",
                     info:"Loves the snow and long walks",
-                    
+                    handleReminder: this.handleReminder.bind(this)
                 }
              ],
         };        
@@ -45,8 +45,8 @@ class Profile extends Component {
     // used to set the state with the localstorage saved data
     componentWillMount(){
         localStorage.getItem('newCards') && this.setState({
-            reminderOpen: false,
-            newPetOpen:false,
+            reminderOpen: this.state.reminderOpen,
+            newPetOpen:this.state.newPetOpen,
             cards: JSON.parse(localStorage.getItem('newCards')),
         })
     }
@@ -106,7 +106,6 @@ class Profile extends Component {
 
          this.setState((event)=>{
             return {
-                reminderOpen: false,
                 newPetOpen:false,
                 cards: newCards
             }
