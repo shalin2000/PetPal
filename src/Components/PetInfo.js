@@ -17,7 +17,7 @@ class PetInfo extends Component {
         var dogImg = 'https://image.flaticon.com/icons/png/512/91/91544.png'
         var catImg = 'https://webstockreview.net/images/cat-clipart-silhouette-2.png'
         var fishImg = 'https://uxwing.com/wp-content/themes/uxwing/download/23-animals-and-nature/fish.png'
-        var birdImg = 'https://lh3.googleusercontent.com/proxy/9kLOfPZoIiRrWSBVK57V8upWqzlmpYscw8Oi_sM9tw1Y91ClH9wCRyL3DTvPgZTDK6b82EJf-LnjjhRMTSmJaZDaqsFTWTw'
+        var birdImg = 'https://static.vecteezy.com/system/resources/previews/001/203/707/non_2x/bird-png.png'
         var smallAnimalImg = 'https://i.pinimg.com/originals/3c/e7/88/3ce7889bebed63f5fcde166c95c3e2e8.png' 
         var reptilesImg = 'https://cdn1.iconfinder.com/data/icons/pets-and-animals-5/96/snake-512.png'
 
@@ -33,7 +33,7 @@ class PetInfo extends Component {
                    {/* row 1 */}
                    <div class="row justify-content-center">
                        {/* dog */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Dog', petImg: dogImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedDogInfo", state: { petType: 'Dog', petImg: dogImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={dogImg} alt="dog"/>
                                 <div class="row justify-content-center">
@@ -42,7 +42,7 @@ class PetInfo extends Component {
                             </div>
                        </Link>
                        {/* cat */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Cat', petImg: catImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedCatInfo", state: { petType: 'Cat', petImg: catImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={catImg} alt="cat"/>
                                 <div class="row justify-content-center">
@@ -51,7 +51,7 @@ class PetInfo extends Component {
                             </div>
                        </Link>
                        {/* fish */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Fish', petImg: fishImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedFishInfo", state: { petType: 'Fish', petImg: fishImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={fishImg} alt="fish"/>
                                 <div class="row justify-content-center">
@@ -63,7 +63,7 @@ class PetInfo extends Component {
                    {/* row 2 */}
                    <div class="row justify-content-center">
                        {/* birds */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Birds', petImg: birdImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedBirdInfo", state: { petType: 'Birds', petImg: birdImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={birdImg} alt="birds"/>
                                 <div class="row justify-content-center">
@@ -72,7 +72,7 @@ class PetInfo extends Component {
                             </div>
                        </Link>
                        {/* small animals */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Small Animals', petImg: smallAnimalImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedRabbitInfo", state: { petType: 'Small Animals', petImg: smallAnimalImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={smallAnimalImg} alt="small animals"/>
                                 <div class="row justify-content-center">
@@ -81,7 +81,7 @@ class PetInfo extends Component {
                             </div>
                        </Link>
                        {/* reptiles */}
-                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedPetInfo", state: { petType: 'Reptiles', petImg: reptilesImg }}}>
+                       <Link style={{textDecoration: 'none'}} to={{pathname: "/selectedSnakeInfo", state: { petType: 'Reptiles', petImg: reptilesImg }}}>
                             <div class="col-md-auto petInfoCard">
                                 <img class="petImg" src={reptilesImg} alt="reptiles"/>
                                 <div class="row justify-content-center">

@@ -17,7 +17,7 @@
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 10px;
-    color: teal;
+    color: tan;
 }
 
 .my-auto {
@@ -27,4 +27,9 @@
 
 .center {
     text-align: center;
+}
+
+.bulletList {
+    text-align: left;
+    width: 300px;
 }
