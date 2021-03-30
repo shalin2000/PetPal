@@ -1,5 +1,5 @@
 .profile {
-    background-color: white;
+    background-color: #A9B7C0;
     min-height: 100vh; /* will cover the 100% of viewport */
     /* text-align: center; */
     overflow: hidden;
@@ -14,4 +14,21 @@
 
 .center {
     text-align: center;
+}
+
+#icon{
+    width: 250px;
+    height: auto;
+}
+
+/* 'add pets' button */
+#add-btn{
+    background:#5e6264;
+    color:tan;
+    border-color:  black;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05) inset, 0px 0px 8px black;
+}
+#add-btn:hover{
+    background:#bcc0c2;
+    color:black
 }

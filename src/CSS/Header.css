@@ -9,7 +9,7 @@ body {
 
 .header hr
 {
-    border-color: white;
+    border-color: #fffaf0;
     display: block;
     margin-top: 0.4em;
     margin-left: auto;
@@ -23,6 +23,7 @@ body {
 }
 
 
+
 /* Individual item */
 .bm-item {
     font-weight: bold;
@@ -32,14 +33,14 @@ body {
     /* Our sidebar item styling */
     text-decoration: none;
     margin-bottom: 10px;
-    color: #d1d1d1;
+    color: tan;
     transition: color 0.2s;
     outline: none;
 }
 
 /* Change color on hover */
 .bm-item:hover {
-    color: green;
+    color: salmon;
 }
 
 /* The rest copied directly from react-burger-menu docs */
@@ -55,7 +56,7 @@ body {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: white;
+    background: tan;
 }
 
 /* Position and sizing of clickable cross button */
@@ -66,33 +67,33 @@ body {
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: #bdc3c7;
+    background: tan;
 }
 
 /* General sidebar styles */
 .bm-menu {
-    background: black;
+    background: #333333;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-    fill: black;
+    fill: #333333;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-    color: #b8b7ad;
+    color: #333333;
 }
 
 /* Styling of overlay */
 .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
+    background: #333333;
 }
 
 .header {
-    background-color: black;
+    background-color: #333333;
     height: 100px;
 }
 
@@ -100,6 +101,6 @@ body {
     text-align: center;
     font-size: 50px;
     font-weight: bold;
-    color: white;
+    color: tan;
     margin-top: -20px;
 }
