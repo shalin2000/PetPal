@@ -108,15 +108,13 @@ class Profile extends Component {
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center'}}>Profile</h2>
-
                 {/* user profile card */}
                 <div class="container center" >
-                    <div class="row justify-content-center" style={{marginTop: '50px'}}>
+                    <div class="row justify-content-center" style={{marginTop: '25px'}}>
                         <div  class="col-md-auto" >
                             <img id="icon" src="https://i.pinimg.com/originals/0c/3b/3a/0c3b3adb1a7530892e55ef36d3be6cb8.png" alt="BigCo Inc. logo"/>
                         </div>
-                        <div class="col-md-auto" style={{paddingTop: '75px'}}>
+                        <div class="col-md-auto" style={{paddingTop: '25px'}}>
                             <div class="row justify-content-center">
                                 <label class="userProfileTxt"><b>Name:</b> Bill W</label>
                             </div>
