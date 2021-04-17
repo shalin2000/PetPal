@@ -127,7 +127,8 @@ class SelectedDogInfo extends Component {
                 </div> : null}
 
                 {/* german shepard pet info */}
-                {this.state.breed.value ===  "German Shepard" || this.state.breed.value ===""? <div className="container center">
+                {this.state.breed.value ===  "German Shepard" || this.state.breed.value ===""? 
+                <div className="container center">
                     <div className="row justify-content-center">
                         <div className="col-md-auto">
                             <h2>Training</h2>

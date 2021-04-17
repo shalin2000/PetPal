@@ -123,18 +123,19 @@ class Profile extends Component {
                             <div class="row justify-content-center">
                                 <label class="userProfileTxt"><b># of Pets:</b> 2</label>
                             </div>
+                            <div class="center">
+                                <button 
+                                    id="add-btn"
+                                    type="button" 
+                                    class="btn btn-primary" 
+                                    onClick={this.handlePetOpen.bind(this)}
+                                    >Add pets
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="center">
-                    <button 
-                        id="add-btn"
-                        type="button" 
-                        class="btn btn-primary" 
-                        onClick={this.handlePetOpen.bind(this)}
-                        >Add pets
-                    </button>
-                </div>
+                
 
                 {/* pet profile card */}
                 <div class="container center">
