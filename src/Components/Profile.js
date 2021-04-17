@@ -24,14 +24,14 @@ class Profile extends Component {
                     img:"https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg",
                     title: "Trev",
                     age: 2,
-                    breed:"Savannah",
+                    animal:"Cat",
                     info:"Likes to eat tuna",
                 },
                 {
                     img:"http://spectrum-sitecore-spectrumbrands.netdna-ssl.com/~/media/Pet/Furminator/Images/Solution%20Center%20Images/Feature%20Images/husky.jpg",
                     title: "Jason",
                     age: 9,
-                    breed:"Husky",
+                    animal:"Dog",
                     info:"Loves the snow and long walks",
                 }
              ],
@@ -83,13 +83,13 @@ class Profile extends Component {
     }
 
     // adds the new pet card to profile page, saving all new pet cards on localstorage
-    handleNewPet(name,age,info,img,breed){
+    handleNewPet(name,age,info,img,animal){
         const newCards = this.state.cards.map(card => card)
         newCards.push({
             img:img,
             title: name,
             age: age,
-            breed:breed,
+            animal:animal,
             info:info,
         })
 

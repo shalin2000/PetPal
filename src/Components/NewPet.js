@@ -13,7 +13,7 @@ class NewPet extends React.Component{
             petAge: 0,
             petInfo: "",
             img: "",
-            petBreed: ""
+            petAnimal: ""
 
         }
         this.savePet = this.savePet.bind(this)
@@ -34,10 +34,10 @@ class NewPet extends React.Component{
             }
         })
     }
-    updateBreed(breed){
+    updateAnimal(animal){
         this.setState(()=>{
             return {
-                petBreed: breed.target.value
+                petAnimal: animal.target.value
             }
         })
     }
@@ -63,7 +63,7 @@ class NewPet extends React.Component{
             this.state.petAge,
             this.state.petInfo,
             this.state.img,
-            this.state.petBreed
+            this.state.petAnimal
          )
     }
 
@@ -86,8 +86,8 @@ class NewPet extends React.Component{
                             <br/>
                         </div>
                         <div>
-                            <label className="form-label">Enter Breed </label>
-                            <input type='text' className='form-control' onChange={(e)=>{this.updateBreed(e)}}/>
+                            <label className="form-label">Enter Animal </label>
+                            <input type='text' className='form-control' onChange={(e)=>{this.updateAnimal(e)}}/>
                             <br/>
                         </div>
                         <div className='form-group '>

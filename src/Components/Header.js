@@ -3,14 +3,14 @@ import '../CSS/Header.css';
 import {Link} from 'react-router-dom';
 import { elastic as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome, faBell, faQuestion, faSearch, faPaw } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBell, faQuestion, faSearch, faPaw } from '@fortawesome/free-solid-svg-icons'
 
 class Header extends Component {
     render(){
         return(
             <div className="header"> 
                 <Menu>
-                    <Link to={{pathname: "/"}} className="menu-item"> <FontAwesomeIcon icon={ faHome } size={40}/>&nbsp; Profile</Link>
+                    <Link to={{pathname: "/"}} className="menu-item"> <FontAwesomeIcon icon={ faUser  } size={40}/>&nbsp; Profile</Link>
 
                     <Link to={{pathname: "/petInfo"}} className="menu-item"><FontAwesomeIcon icon={ faPaw } size={40}/>&nbsp; Pet Info </Link>
 
@@ -23,7 +23,7 @@ class Header extends Component {
                 </Menu>
 
                 <div className="appName">
-                    <label>PetPal</label>
+                <Link to={{pathname: "/"}} className='text-link'> PetPal </Link>
                 </div>
             </div>
         )

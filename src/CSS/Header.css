@@ -1,107 +1,114 @@
 body {
-    margin: 0;
-}
-  
-#App {
-    font-family: sans-serif;
-    height: 100vh;
+  margin: 0;
 }
 
-.header hr
-{
-    border-color: #fffaf0;
-    display: block;
-    margin-top: 0.4em;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 5px;
+#App {
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.header hr {
+  border-color: #fffaf0;
+  display: block;
+  margin-top: 0.4em;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 5px;
 }
 
 #page-wrap {
-    text-align: center;
-    overflow: auto;
+  text-align: center;
+  overflow: auto;
 }
-
-
 
 /* Individual item */
 .bm-item {
-    font-weight: bold;
-    font-family: verdana;
-    font-size: 20px;
-    display: inline-block;
-    /* Our sidebar item styling */
-    text-decoration: none;
-    margin-bottom: 10px;
-    color: tan;
-    transition: color 0.2s;
-    outline: none;
+  font-weight: bold;
+  font-family: verdana;
+  font-size: 20px;
+  display: inline-block;
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: tan;
+  transition: color 0.2s;
+  outline: none;
 }
 
 /* Change color on hover */
 .bm-item:hover {
-    color: salmon;
-    text-decoration: none;
+  color: salmon;
+  text-decoration: none;
 }
 
 /* The rest copied directly from react-burger-menu docs */
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-    position: relative;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 35px;
+  position: relative;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 35px;
 }
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: tan;
+  background: tan;
 }
 
 /* Position and sizing of clickable cross button */
 .bm-cross-button {
-    height: 24px;
-    width: 24px;
+  height: 24px;
+  width: 24px;
 }
 
 /* Color/shape of close button cross */
 .bm-cross {
-    background: tan;
+  background: tan;
 }
 
 /* General sidebar styles */
 .bm-menu {
-    background: #333333;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+  background: #333333;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-    fill: #333333;
+  fill: #333333;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
-    color: #333333;
+  color: #333333;
 }
 
 /* Styling of overlay */
 .bm-overlay {
-    background: #333333;
+  background: #333333;
 }
 
 .header {
-    background-color: #333333;
-    height: 100px;
+  background-color: #333333;
+  height: 100px;
 }
 
-.appName{
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: tan;
-    margin-top: -20px;
+.appName {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: tan;
+  margin-top: -20px;
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.text-link:hover {
+  color: salmon;
+  text-decoration: none;
 }

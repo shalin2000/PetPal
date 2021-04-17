@@ -1,19 +1,22 @@
 .faq {
-    background-color: #A9B7C0;;
-    min-height: 100vh; /* will cover the 100% of viewport */
-    /* text-align: center; */
-    overflow: hidden;
-    display: block;
-    position: relative;
-    padding-bottom: 100px; /* height of your footer */
+  background-color: #a9b7c0;
+  min-height: 100vh; /* will cover the 100% of viewport */
+  /* text-align: center; */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 100px; /* height of your footer */
 }
 
-.allQA{
-    padding-left: 10px;
-    margin-left: 50px;
+.allQA {
+  padding-top: 3%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  /* margin-left: 50px; */
 }
 
 .categoryText {
-    font-weight: bold;
-    text-decoration: underline;
+  font-weight: bold;
+  text-decoration: underline;
 }

@@ -22,7 +22,7 @@ class PetCard extends Component{
                 <Card.Body>
                         <Card.Title>{this.props.info.title}</Card.Title>
                         <Card.Text>Age: {this.props.info.age}</Card.Text>
-                        <Card.Text>Breed: {this.props.info.breed}</Card.Text>
+                        <Card.Text>Animal: {this.props.info.animal}</Card.Text>
                         <Card.Text>Info: {this.props.info.info}</Card.Text>  
                     <Button id="new-reminder-button" variant="primary" onClick={this.props.handleAdd}>New Reminder</Button>
                 </Card.Body>

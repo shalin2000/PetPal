@@ -18,7 +18,7 @@ class FAQ extends Component {
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center'}}>FAQ</h2>
+                <h2 style={{textAlign: 'center', paddingTop: '3%'}}>FAQ</h2>
 
                 {/* Q&A used from link below */}
                 {/* https://www.wkanimalhospital.com/instructionsheet/frequently-asked-questions-new-dog-owners */}
