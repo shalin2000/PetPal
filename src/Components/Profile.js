@@ -121,7 +121,7 @@ class Profile extends Component {
                             <div class="row justify-content-left">
                                 <label class="userProfileTxt"><b># of Pets:</b> 2</label>
                             </div>
-                            <div class="center">
+                            <div class="row justify-content-left">
                                 <button 
                                     id="add-btn"
                                     type="button" 
