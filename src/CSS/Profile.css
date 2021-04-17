@@ -1,5 +1,6 @@
 .profile {
     background-color: #A9B7C0;
+    
     min-height: 50vh; /* will cover the 100% of viewport */
     /* text-align: center; */
     overflow: hidden;
