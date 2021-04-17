@@ -126,6 +126,15 @@ class Profile extends Component {
                         </div>
                     </div>
                 </div>
+                <div class="center">
+                    <button 
+                        id="add-btn"
+                        type="button" 
+                        class="btn btn-primary" 
+                        onClick={this.handlePetOpen.bind(this)}
+                        >Add pets
+                    </button>
+                </div>
 
                 {/* pet profile card */}
                 <div class="container center">
@@ -148,15 +157,7 @@ class Profile extends Component {
                     </Modal>
                 </div>
                 <br></br>
-                <div class="center">
-                    <button 
-                        id="add-btn"
-                        type="button" 
-                        class="btn btn-primary" 
-                        onClick={this.handlePetOpen.bind(this)}
-                        >Add pets
-                    </button>
-                </div>
+                
 
             </div>
         )
