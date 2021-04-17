@@ -21,7 +21,7 @@ class SearchMap extends Component {
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center'}}>Search Map</h2>
+                <h2 style={{textAlign: 'center',paddingTop: '3%', paddingBottom:'3%'}}>Search Map</h2>
                 
                 <div class="container center">
                     {/* row 1 for filter */}

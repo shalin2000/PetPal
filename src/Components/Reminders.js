@@ -40,7 +40,7 @@ class Reminders extends Component {
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center'}}>Reminders</h2>
+                <h2 style={{textAlign: 'center', paddingTop: '3%', paddingBottom: '3%'}}>Reminders</h2>
                 
                 {/* calender with reminders */}
                 <div class="container center">
