@@ -14,6 +14,12 @@
     font-size: 20px;
 }
 
+#log-btn{
+    width: 150px;
+    height: 50px;
+    margin-top: 2%;
+}
+
 #add-btn{
     margin-top: 2.5%;
 }

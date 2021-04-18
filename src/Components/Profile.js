@@ -8,6 +8,8 @@ import '../CSS/Profile.css';
 import Header from './Header';
 import NewReminder from './NewReminder';
 import NewPet from './NewPet'
+import Login from './Login'
+
 
 
 class Profile extends Component {
@@ -18,6 +20,7 @@ class Profile extends Component {
         // initial state with 2 pet cards
         this.state = {
              reminderOpen: false,
+             loginOpen: false,
              newPetOpen:false,
              cards:[
                 {
@@ -58,6 +61,15 @@ class Profile extends Component {
             }
         })
      }
+     // handle opening the new reminders pop up form
+    handleLogin(){
+        
+        this.setState(() => {
+            return {
+             loginOpen: true,
+            }
+        })
+     }
 
     // handle opening the new pet card form
     handlePetOpen(){
@@ -72,6 +84,7 @@ class Profile extends Component {
     handleClose (){
         this.setState(() => {
             return {
+                loginOpen: false,
                 reminderOpen: false,
                 newPetOpen:false,
             }
@@ -107,6 +120,20 @@ class Profile extends Component {
             <div class="profile">
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
+                <div class="row justify-content-center">
+                    <button 
+                        id="log-btn"
+                        type="button" 
+                        class="btn btn-primary"
+                        onClick={this.handleLogin.bind(this)}
+                        >
+                            Sign-In
+                    </button>
+                    <Modal  show={this.state.loginOpen} onHide={this.handleClose.bind(this)}>
+                        <Login handleClose={this.handleClose.bind(this)}/>
+                    </Modal>
+                </div>
+                
 
                 {/* user profile card */}
                 <div class="container center" >

@@ -9,6 +9,7 @@ class Header extends Component {
     render(){
         return(
             <div className="header"> 
+            
                 <Menu>
                     <Link to={{pathname: "/"}} className="menu-item"> <FontAwesomeIcon icon={ faUser  } size={40}/>&nbsp; Profile</Link>
 
@@ -25,6 +26,8 @@ class Header extends Component {
                 <div className="appName">
                 <Link to={{pathname: "/"}} className='text-link'> PetPal </Link>
                 </div>
+
+                
             </div>
         )
     }

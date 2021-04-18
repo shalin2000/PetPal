@@ -22,7 +22,7 @@ class SelectedDogInfo extends Component {
         this.setState({
             petType: this.props.location.state.petType,
             petImg: this.props.location.state.petImg,
-            breed: 'German Shepard'
+            breed: ''
         })
     }
     
@@ -127,7 +127,7 @@ class SelectedDogInfo extends Component {
                 </div> : null}
 
                 {/* german shepard pet info */}
-                {this.state.breed.value ===  "German Shepard" || this.state.breed.value ===""? 
+                {this.state.breed.value ===  "German Shepard"? 
                 <div className="container center">
                     <div className="row justify-content-center">
                         <div className="col-md-auto">
