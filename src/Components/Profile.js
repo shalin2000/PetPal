@@ -61,7 +61,7 @@ class Profile extends Component {
             }
         })
      }
-     // handle opening the new reminders pop up form
+    // handle opening the new reminders pop up form
     handleLogin(){
         
         this.setState(() => {
@@ -143,7 +143,7 @@ class Profile extends Component {
                         </div>
                         <div class="col-md-auto" style={{paddingTop: '15px'}}>
                             <div class="row justify-content-left">
-                                <label class="userProfileTxt"><b>Name:</b> Bill W</label>
+                                <label class="userProfileTxt"><b>Name:</b> John Doe</label>
                             </div>
                             <div class="row justify-content-left">
                                 <label class="userProfileTxt"><b># of Pets:</b> 2</label>

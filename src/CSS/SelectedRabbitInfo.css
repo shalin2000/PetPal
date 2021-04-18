@@ -29,7 +29,37 @@
     text-align: center;
 }
 
-.bulletList {
-    text-align: left;
-    width: 300px;
+li {
+    margin-bottom: 10px;
+}
+
+.new-pet-form{
+    background: #697184;
+    border-radius: 15px;
+}
+
+/* content of form  */
+.modal-content{
+    border-radius: 15px!important;
+    color:black;
+}
+
+.h4{
+    font-size: 34px!important;
+    font-weight: bold;   
+}
+
+.form-label{
+    font-size: 32px!important;
+    font-weight:400; 
+}
+
+/* close button on form */
+.form-buttons{
+    background:salmon!important;
+}
+
+.form-buttons:hover{
+    background:cornsilk!important;
+    color: black !important;
 }
