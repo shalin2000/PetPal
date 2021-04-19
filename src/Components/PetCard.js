@@ -10,12 +10,22 @@ class PetCard extends Component{
         }
     }
 
+    removePet = () =>{
+        this.props.handleRemove(this.props.info)
+    }
+
     render(){
         
         return (
             <div id="outer-card">
             <Card id="pcards" >
                 <div style={{border:"red"}}>
+                    <Button 
+                        id='removeCard' 
+                        style={{justifyContent: 'flex-end',display: 'flex'}}
+                        onClick={this.removePet}
+                        title="Remove Pet"
+                        >X</Button>
                    <Card.Img variant="top" src={this.props.info.img} /> 
                 </div>
                 
@@ -30,6 +40,9 @@ class PetCard extends Component{
             </div>
         )
     }
+    // removePet = () =>{
+    //     this.props.handleRemove(this.props.info)
+    // }
 }
 
 export default PetCard

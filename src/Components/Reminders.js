@@ -13,9 +13,45 @@ class Reminders extends Component {
         super(props);
         this.state = {
             value: null,
-            addReminderOpen: false
+            addReminderOpen: false,
+            reminderList: [
+                {
+                    description: 'Feed Trev and Amy',
+                    date: '1/2/21',
+                    time: '12:00 pm, 5:00 pm'
+                },
+                {
+                    description: 'Take Trev and Amy on a walk',
+                    date: '1/2/21',
+                    time: '6:00 pm'
+                }
+
+            ]
         };
+        // this.updateState = this.updateState.bind(this)
     }
+
+    // used to set the state with the localstorage saved data
+    componentWillMount(){
+        // const newReminderList = this.state.reminderList
+        // if(JSON.parse(localStorage.getItem('newReminder'))){
+            
+        //     newReminderList.push(JSON.parse(localStorage.getItem('newReminder'))) 
+             
+        // }
+        
+        localStorage.getItem('newReminderList1') && this.setState(
+            {
+            reminderList: JSON.parse(localStorage.getItem('newReminderList1')),
+            }
+        )
+    }
+    // save the current state of the pet cards
+    componentWillUpdate(nextProps, nextState){
+        localStorage.setItem('newReminderList', JSON.stringify(this.state.reminderList))
+    }
+
+   
 
     handleReminder(){
         this.setState(()=>{
@@ -58,14 +94,16 @@ class Reminders extends Component {
                     <div class="row justify-content-center">
                             <div class="col-md-auto todoContent">
                                 <label style={{fontWeight: 'bold', textDecoration: 'underline'}}>Task:</label>
-                                <br></br>
-                                <label>Feed Trev and Amy</label>
-                                <br></br>
-                                <label>Take Trev and Amy on a walk</label>
-                                <br></br>
-                                <label>..............................</label>
-                                <br></br>
-                                <label>..............................</label>
+                                {/* {console.log('1 '+ this.state.reminderList} */}
+                                {this.state.reminderList.map((reminder,i )=>{
+                                 console.log('r ', reminder)
+                                return (
+                                    <div> 
+                                        <label>{reminder.description}</label>        
+                                    </div>
+                                    )
+                                 })}
+
                             </div>
                             <div class="col-md-auto todoContent">
                                 <label style={{fontWeight: 'bold', textDecoration: 'underline'}}>Time:</label>

@@ -61,6 +61,20 @@ class Profile extends Component {
             }
         })
      }
+
+
+    handleRemove(target){
+        console.log("here11");
+        const newCards = this.state.cards.filter(function(c) { return c !== target; }); 
+
+        this.setState(() => {
+            return {
+             cards: newCards,
+            }
+        })
+    }
+
+
     // handle opening the new reminders pop up form
     handleLogin(){
         
@@ -167,10 +181,15 @@ class Profile extends Component {
                     <div class="row justify-content-center" style={{marginTop: '50px'}}>
 
                         {/* displays all the pet cards  */}
+                        {console.log("hhh",this.state)}
                         {this.state.cards.map((card,i )=>{
                             console.log("returning",this.state)
                             return (
-                                <PetCard handleAdd={this.handleReminder.bind(this)} key={i} info={card}/>
+                                <PetCard 
+                                    handleRemove={this.handleRemove.bind(this)} 
+                                    handleAdd={this.handleReminder.bind(this)} 
+                                    key={i} 
+                                    info={card}/>
                             )
                         })}
                     </div >
