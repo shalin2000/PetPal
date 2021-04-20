@@ -35,7 +35,7 @@ class PetCard extends Component {
             <div id="outer-card">
                 <Card id="pcards" >
                     <div style={{ border: "red" }}>
-                        <button id='removeCard' style={{ display: 'flex' }} onClick={this.removePet} title="Remove Pet">
+                        <button id='removeCard' style={{ display: 'flex' ,float:'right'}} onClick={this.removePet} title="Remove Pet">
                             <FontAwesomeIcon icon={faTimes} size={40} style={{ color: 'tan' }} />
                         </button>
 

@@ -9,7 +9,7 @@ class NewReminder extends React.Component {
         this.state = {
             title: "",
             description: "",
-            date: "",
+            date: this.props.selectedDate?this.props.selectedDate.toISOString().slice(0, 10):"",
             time: "",
         }
         this.saveReminder = this.saveReminder.bind(this)
