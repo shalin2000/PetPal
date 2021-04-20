@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Toast } from 'react-bootstrap'
 import Calendar from 'react-calendar';
-import moment from 'moment'
+import moment from 'moment';
 
 import '../CSS/Reminders.css';
 import Header from './Header';

@@ -21,27 +21,44 @@ class SearchMap extends Component {
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center',paddingTop: '3%', paddingBottom:'3%'}}>Search Map</h2>
+                <h2 style={{textAlign: 'center',paddingTop: '3%', paddingBottom:'1%'}}>Search Map</h2>
                 
                 <div class="container center">
                     {/* row 1 for filter */}
                     <div class="row justify-content-center">
                         <div class="col-md-auto">
                             <label>
-                                Address:
-                                <input type="text" name="name" />
+                            Address: {<span><input type="text" name="name" /></span>}
                             </label>
                         </div>
-                        <label>Or</label>
+                        {/* <label>Or</label>
                         <div class="col-md-auto">
                             <label>
                                 Zip:
                                 <input type="text" name="name" />
                             </label>
+                        </div> */}
+                        <div class="col-md-auto">
+                            Pet Store
+                            <Checkbox
+                                checked={this.state.petStoreChecked}
+                                onChange={() => this.setState({petStoreChecked: !this.state.petStoreChecked})}
+                                color="primary"
+                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                            />
+                        </div>
+                        <div class="col-md-auto">
+                            Shelter
+                            <Checkbox
+                                checked={this.state.shelterChecked}
+                                onChange={() => this.setState({shelterChecked: !this.state.shelterChecked})}
+                                color="primary"
+                                inputProps={{ 'aria-label': 'secondary checkbox' }}
+                            />
                         </div>
                     </div>
                     {/* row 2 for filter */}
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" style={{paddingTop: '1%', paddingBottom:'1%'}}>
                         <div class="col-md-auto">
                             <Dropdown>
                                 <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -68,24 +85,6 @@ class SearchMap extends Component {
                                     <Dropdown.Item href="#/action-3">Bulldog</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
-                        </div>
-                        <div class="col-md-auto">
-                            Pet Store
-                            <Checkbox
-                                checked={this.state.petStoreChecked}
-                                onChange={() => this.setState({petStoreChecked: !this.state.petStoreChecked})}
-                                color="primary"
-                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            />
-                        </div>
-                        <div class="col-md-auto">
-                            Shelter
-                            <Checkbox
-                                checked={this.state.shelterChecked}
-                                onChange={() => this.setState({shelterChecked: !this.state.shelterChecked})}
-                                color="primary"
-                                inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            />
                         </div>
                         <div class="col-md-auto">
                             <button type="button" class="btn btn-primary">Search</button>
