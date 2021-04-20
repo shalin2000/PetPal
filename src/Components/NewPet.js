@@ -9,11 +9,11 @@ class NewPet extends React.Component{
 
         // initial state of information for new pet card form
         this.state={
-            petName: "", 
-            petAge: 0,
-            petInfo: "",
-            img: "",
-            petAnimal: ""
+            petName: this.props.pet?(this.props.pet.title):"", 
+            petAge: this.props.pet?(this.props.pet.age):"",
+            petInfo: this.props.pet?(this.props.pet.info):"",
+            img: this.props.pet?(this.props.pet.img):"",
+            petAnimal: this.props.pet?(this.props.pet.animal):""
 
         }
         this.savePet = this.savePet.bind(this)
@@ -21,37 +21,38 @@ class NewPet extends React.Component{
 
     // update the information the users types in the form 
     updateName(name){
+       
         this.setState(()=>{
             return {
-                petName: name.target.value,
+                petName: name,
             }
         })
     }
     updateAge(age){
         this.setState(()=>{
             return {
-                petAge: age.target.value,
+                petAge: age,
             }
         })
     }
     updateAnimal(animal){
         this.setState(()=>{
             return {
-                petAnimal: animal.target.value
+                petAnimal: animal
             }
         })
     }
     updateInfo(info){
         this.setState(()=>{
             return {
-                petInfo: info.target.value,
+                petInfo: info,
             }
         })
     }
     updateImg(image){
         this.setState(()=>{
             return {
-                img: image.target.value,
+                img: image,
             }
         })
     }
@@ -67,6 +68,10 @@ class NewPet extends React.Component{
          )
     }
 
+    editPetCard(){
+
+    }
+
     render(){
         return(
             <form className="new-pet-form">
@@ -77,26 +82,26 @@ class NewPet extends React.Component{
                     <form >
                         <div className='form-group' >
                             <label className="form-label">Pet Name</label>
-                            <input type='text' className='form-control' placeholder='Enter pet name' onChange={(e)=>{this.updateName(e)}}/>
+                            <input defaultValue={this.state.petName} type='text' className='form-control' placeholder='Enter pet name' onChange={(e)=>{this.updateName(e.target.value)}}/>
                             <br/>
                         </div>
                         <div className='form-group'>
                             <label className="form-label">Pet Age</label>
-                            <input type='text' className='form-control' placeholder='Enter age' onChange={(e)=>{this.updateAge(e)}}/>
+                        <input defaultValue={this.state.petAge} type='text' className='form-control' placeholder='Enter age' onChange={(e)=>{this.updateAge(e.target.value)}}/>
                             <br/>
                         </div>
                         <div>
                             <label className="form-label">Enter Animal </label>
-                            <input type='text' className='form-control' onChange={(e)=>{this.updateAnimal(e)}}/>
+                        <input defaultValue={this.state.petAnimal} type='text' className='form-control' placeholder='Enter pet type' onChange={(e)=>{this.updateAnimal(e.target.value)}}/>
                             <br/>
                         </div>
                         <div className='form-group '>
                             <label className="form-label">Enter Pet Info </label>
-                            <textarea type='text' className='form-control' onChange={(e)=>{this.updateInfo(e)}}/>
+                            <textarea defaultValue={this.state.petInfo} type='text' className='form-control' placeholder='Enter pet info' onChange={(e)=>{this.updateInfo(e.target.value)}}/>
                         </div>
                         <div className='form-group '>
                             <label className="form-label">Enter Img URL </label>
-                            <input type='text' className='form-control' onChange={(e)=>{this.updateImg(e)}}/>
+                            <input defaultValue={this.state.img} type='text' className='form-control' placeholder='Enter pet img URL' onChange={(e)=>{this.updateImg(e.target.value)}}/>
                         </div>
                         
                     </form>

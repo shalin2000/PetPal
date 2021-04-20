@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Modal} from 'react-bootstrap'
+import { Modal, Toast } from 'react-bootstrap'
 import Calendar from 'react-calendar';
+import moment from 'moment'
 
 import '../CSS/Reminders.css';
 import Header from './Header';
@@ -16,121 +17,171 @@ class Reminders extends Component {
             addReminderOpen: false,
             reminderList: [
                 {
+                    title: 'Trev & Amy',
                     description: 'Feed Trev and Amy',
-                    date: '1/2/21',
+                    date: '4/2/21',
                     time: '12:00 pm, 5:00 pm'
                 },
                 {
+                    title: 'Trev & Amy',
                     description: 'Take Trev and Amy on a walk',
-                    date: '1/2/21',
+                    date: '5/2/21',
                     time: '6:00 pm'
                 }
 
-            ]
+            ],
         };
-        // this.updateState = this.updateState.bind(this)
+        this.removeReminder = this.removeReminder.bind(this);
+        this.reminderDate = this.reminderDate.bind(this);
     }
 
     // used to set the state with the localstorage saved data
-    componentWillMount(){
-        // const newReminderList = this.state.reminderList
-        // if(JSON.parse(localStorage.getItem('newReminder'))){
-            
-        //     newReminderList.push(JSON.parse(localStorage.getItem('newReminder'))) 
-             
-        // }
-        
-        localStorage.getItem('newReminderList1') && this.setState(
-            {
-            reminderList: JSON.parse(localStorage.getItem('newReminderList1')),
-            }
-        )
-    }
-    // save the current state of the pet cards
-    componentWillUpdate(nextProps, nextState){
-        localStorage.setItem('newReminderList', JSON.stringify(this.state.reminderList))
+    componentWillMount() {
+        if (localStorage.getItem('accountReminder')) {
+            const re = this.state.reminderList.map(r => r)
+            JSON.parse(localStorage.getItem('accountReminder')).map(r => { re.push(r) })
+            this.setState({ reminderList: re })
+            localStorage.removeItem('accountReminder')
+        } else {
+            localStorage.getItem('newReminderList') && this.setState({
+                reminderList: JSON.parse(localStorage.getItem('newReminderList')),
+            })
+        }
     }
 
-   
+    // save the current state of the reminders
+    componentWillUpdate(nextProps, nextState) {
+        localStorage.setItem('newReminderList', JSON.stringify(nextState.reminderList))
+    }
 
-    handleReminder(){
-        this.setState(()=>{
-            return{
+
+    // open the reminder form
+    handleReminderOpen() {
+        this.setState(() => {
+            return {
                 addReminderOpen: true
             }
         })
     }
 
-    handleClose(){
-        this.setState(()=>{
-            return{
-                addReminderOpen: false
+    //close the reminder form
+    handleClose() {
+        this.setState(() => {
+            return {
+                addReminderOpen: false,
+                value:""
             }
         })
     }
-    render (){
+
+    // removes selected reminder from list of reminders
+    removeReminder(obj) {
+        const removeR = this.state.reminderList.filter(c => c !== obj);
+        this.setState(() => {
+            return {
+                reminderList: removeR,
+            }
+        })
+    }
+
+    // adds a new reminder to the list
+    handleNewReminder(title_, description_, date_, time_) {
+        const nReminders = this.state.reminderList.map(r => r)
+        nReminders.push({
+            title: title_,
+            description: description_,
+            date: String(date_),
+            time: String(time_),
+        })
+
+        this.setState(() => {
+            return {
+                addReminderOpen: false,
+                reminderList: nReminders,
+            }
+        })
+    }
+
+    // save the date the user clicks on in the caldendar
+    reminderDate(e){
+        this.setState(()=>{
+            return {value: e}
+        })
+
+        this.handleReminderOpen()
+    }
+
+    render() {
         var date = new Date().toDateString();
         console.log(date)
-        return(
+        return (
             <div className="reminder">
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
 
-                <h2 style={{textAlign: 'center', paddingTop: '3%', paddingBottom: '3%'}}>Reminders</h2>
-                
+                <h2 style={{ textAlign: 'center', paddingTop: '1%', paddingBottom: '1%' }}>Reminders</h2>
+
                 {/* calender with reminders */}
                 <div class="container center">
-                    <div class="row justify-content-center">
+                      <div class="row justify-content-center" >
                         <Calendar
-                            onChange={(value) => this.setState({value: value})}
+                           
+                            onChange={e => this.reminderDate(e)}
                             value={this.state.value}
+                            style={{ width: '200px!important', marginRight: '20px'}}
+                            active="false"
                         />
-                    </div>
-                    {/* todo list for the current day */}
-                    <br></br>
+                       
+                    </div>  
+                    
+                    {/* */}
                     <div class="row justify-content-center">
-                        <h3 style={{fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center'}}>TODO Today: {date}</h3>
-                    </div>
-                    <div class="row justify-content-center">
-                            <div class="col-md-auto todoContent">
-                                <label style={{fontWeight: 'bold', textDecoration: 'underline'}}>Task:</label>
-                                {/* {console.log('1 '+ this.state.reminderList} */}
-                                {this.state.reminderList.map((reminder,i )=>{
-                                 console.log('r ', reminder)
-                                return (
-                                    <div> 
-                                        <label>{reminder.description}</label>        
-                                    </div>
-                                    )
-                                 })}
-
-                            </div>
-                            <div class="col-md-auto todoContent">
-                                <label style={{fontWeight: 'bold', textDecoration: 'underline'}}>Time:</label>
-                                <br></br>
-                                <label>12:00 pm, 5:00 pm</label>
-                                <br></br>
-                                <label>6:00 pm </label>
-                                <br></br>
-                                <label>..............................</label>
-                                <br></br>
-                                <label>..............................</label>
-                            </div>
-                            <div class="col-md-auto my-auto">
-                                <button 
-                                    type="button" 
-                                    class="btn btn-primary" 
-                                    style={{justifyContent: 'center'}}
-                                    onClick={this.handleReminder.bind(this)}
-                                    >Add Reminder</button>
-                            </div>
-                            <Modal show={this.state.addReminderOpen} onHide={this.handleClose.bind(this)}>
-                                <NewReminder handleClose={this.handleClose.bind(this)}/>
-                            </Modal>
+                        <h3 style={{ fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center', paddingTop: '20px' }}>Today: {date}</h3>
+                        <div class="col-md-auto my-auto" >
+                            <button
+                                type="button"
+                                class="btn btn-primary"
+                                style={{ justifyContent: 'center', marginTop: '20px' }}
+                                onClick={this.handleReminderOpen.bind(this)}
+                            >Add Reminder Manually</button>
                         </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        {/* loop through the reminders and add display them */}
+                            {this.state.reminderList.map((reminder) => {
+                                return (
+                                    <div class="row justify-content-center" style={{ display: 'flex', width: '50%', padding: '45px' }}>
+                                        <Toast className='toast' onClose={() => this.removeReminder(reminder)}>
+                                            <Toast.Header className='toast-header'>
+                                                <strong className="mr-auto" style={{ fontSize: '22px' }}>{reminder.title}</strong>
+                                                <small>{moment(reminder.date).fromNow()}</small>
+                                            </Toast.Header>
+                                            <Toast.Body style={{ textAlign: 'left' }}>
+                                                <div className='reminderDesc'>
+                                                    <label style={{ fontWeight: 'bold', color:'black' }}>Task:</label>
+                                                    <p style={{ fontSize: '20px' }}>{reminder.description}</p>
+                                                </div>
+                                                <div>
+                                                    <label style={{ fontWeight: 'bold', color:'black' }}> When:</label>
+                                                    <p style={{ fontWeight: 'inherit', fontSize: '20px' }}>{reminder.date + " at " + reminder.time}</p>
+                                                </div>
+                                            </Toast.Body>
+                                        </Toast>
+                                    </div>
+                                )
+                            })}
+
+                        <Modal show={this.state.addReminderOpen} onHide={this.handleClose.bind(this)}>
+                            <NewReminder 
+                                handleClose={this.handleClose.bind(this)} 
+                                addReminder={this.handleNewReminder.bind(this)}
+                                selectedDate={this.state.value} />
+                        </Modal>
+                    </div>
                 </div>
-            </div> 
-         )
+            </div>
+        )
     };
 }
 

@@ -28,15 +28,10 @@
 }
 
 #removeCard{
-    width: 20px;
-    height: 20px;
-    padding: 0px 4px;
     margin-bottom: 5px;
-    border-radius: 15px;
-    font-size: 13px;
-    /* background-color: rgb(251, 108, 108)!important; */
-
+    background-color: #5e6264!important;
 }
 #removeCard:hover{
     background-color: rgb(251, 108, 108)!important;
 }
+

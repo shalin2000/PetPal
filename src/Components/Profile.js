@@ -14,6 +14,8 @@ import Login from './Login'
 
 class Profile extends Component {
 
+
+
     constructor(props) {
         super(props)
 
@@ -38,7 +40,12 @@ class Profile extends Component {
                     info:"Loves the snow and long walks",
                 }
              ],
-        };        
+
+             reminders:[],
+             selectedPet:null
+        };   
+        // this.handleEdit = this.handleEdit.bind(this); 
+        this.handleReminderOpen = this.handleReminderOpen.bind(this);    
     }
 
     // used to set the state with the localstorage saved data
@@ -46,15 +53,20 @@ class Profile extends Component {
         localStorage.getItem('newCards') && this.setState({
             cards: JSON.parse(localStorage.getItem('newCards')),
         })
+
+        localStorage.getItem('accountReminder') && this.setState({
+            reminders: JSON.parse(localStorage.getItem('accountReminder')),
+        })
     }
     // save the current state of the pet cards
     componentWillUpdate(nextProps, nextState){
         localStorage.setItem('newCards', JSON.stringify(nextState.cards))
+        localStorage.setItem('accountReminder', JSON.stringify(nextState.reminders))
     }
 
     // handle opening the new reminders pop up form
-    handleReminder(){
-        
+    handleReminderOpen(){
+
         this.setState(() => {
             return {
              reminderOpen: true,
@@ -63,8 +75,9 @@ class Profile extends Component {
      }
 
 
+     // remove the petCard
     handleRemove(target){
-        console.log("here11");
+        
         const newCards = this.state.cards.filter(function(c) { return c !== target; }); 
 
         this.setState(() => {
@@ -101,6 +114,7 @@ class Profile extends Component {
                 loginOpen: false,
                 reminderOpen: false,
                 newPetOpen:false,
+                selectedPet:null
             }
         })
     } 
@@ -111,7 +125,15 @@ class Profile extends Component {
 
     // adds the new pet card to profile page, saving all new pet cards on localstorage
     handleNewPet(name,age,info,img,animal){
-        const newCards = this.state.cards.map(card => card)
+        let newCards = null
+        // if pet card is being edited, remove it and add a new one with new info
+        if (this.state.selectedPet){
+            newCards = this.state.cards.filter(c => c !== this.state.selectedPet)
+        }
+        else{
+          newCards = this.state.cards.map(card => card)  
+        }
+        
         newCards.push({
             img:img,
             title: name,
@@ -122,9 +144,38 @@ class Profile extends Component {
 
          this.setState(()=>{
             return {
-                handleReminder:false,
+                reminderOpen:false,
                 newPetOpen:false,
-                cards: newCards
+                cards: newCards,
+                selectedPet:null,
+            }
+        })
+    }
+
+    // add the new reminders info
+    handleNewReminder(title_, description_, date_, time_){
+        const newReminders = this.state.reminders.map(card => card)
+        newReminders.push({
+            title: title_,
+            description: description_,
+            date : String(date_),
+            time : String(time_),
+        })
+
+        this.setState(()=>{
+            return {
+                reminderOpen: false,
+                reminders: newReminders
+            }
+        })
+    }
+
+    // mark the selected pet card for editing
+    handleEdit(card){
+        this.handlePetOpen()
+        this.setState(()=>{
+            return {
+                selectedPet:card
             }
         })
     }
@@ -181,24 +232,23 @@ class Profile extends Component {
                     <div class="row justify-content-center" style={{marginTop: '50px'}}>
 
                         {/* displays all the pet cards  */}
-                        {console.log("hhh",this.state)}
                         {this.state.cards.map((card,i )=>{
-                            console.log("returning",this.state)
                             return (
                                 <PetCard 
                                     handleRemove={this.handleRemove.bind(this)} 
-                                    handleAdd={this.handleReminder.bind(this)} 
+                                    handleAdd={this.handleReminderOpen.bind(this)} 
+                                    handleEdit={this.handleEdit.bind(this)}
                                     key={i} 
                                     info={card}/>
                             )
                         })}
                     </div >
                     <Modal  show={this.state.reminderOpen} onHide={this.handleClose.bind(this)}>
-                        <NewReminder handleClose={this.handleClose.bind(this)}/>
+                        <NewReminder handleClose={this.handleClose.bind(this)} addReminder={this.handleNewReminder.bind(this)}/>
                     </Modal>
 
                     <Modal  show={this.state.newPetOpen} onHide={this.handleClose.bind(this)}>
-                        <NewPet handleClose={this.handleClose.bind(this)} addPetCard={this.handleNewPet.bind(this) } />
+                        <NewPet handleClose={this.handleClose.bind(this)} addPetCard={this.handleNewPet.bind(this)} pet={this.state.selectedPet} />
                     </Modal>
                 </div>
                 <br></br>

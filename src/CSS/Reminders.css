@@ -34,3 +34,81 @@
     background:#bcc0c2!important;
     color: black !important;
 }
+
+
+.toast{
+    background:#697184!important; 
+    color:aliceblue;
+  
+}
+
+.toast-header{
+    background-color:rgb(211, 228, 243)!important; 
+}
+
+.reminderDesc{
+    border-bottom: 2px solid black;
+}
+
+/* sytles for the calendar in reminders */
+.react-calendar{
+    width: 500px!important;
+    height: auto!important;
+    background-color:rgb(211, 228, 243)!important;
+}
+
+.react-calendar__navigation{
+    height:300px;
+    background-color:#697184!important;
+    color:white!important;
+}
+.react-calendar__navigation:hover{
+   
+    background-color:#697184!important;
+    color:white!important;
+}
+
+.react-calendar__navigation__arrow{
+    color:white!important;
+    font-size:25px;
+}
+.react-calendar__navigation__arrow:hover{
+    color:black!important;
+    font-size:25px;
+}
+
+.react-calendar__navigation__label{
+    color:white!important;
+    font-size:25px;
+}
+.react-calendar__navigation__label:hover{
+    color:black!important;
+    font-size:25px;
+}
+
+
+.react-calendar__viewContainer{
+    font-size:25px;
+}
+.react-calendar__month-view__weekdays{
+    border-bottom: 2px solid black;
+}
+
+.react-calendar__tile--now{
+    background:#697184!important;
+    border-radius: 10px!important;
+    color:rgb(211, 228, 243)!important;
+    font-size:30px;
+}
+
+.react-calendar__tile--active{
+    background: rgb(211, 228, 243)!important;
+    color:black!important;
+}
+
+.react-calendar__month-view__days__day--weekend{
+    color: black !important;
+}
+
+
+
