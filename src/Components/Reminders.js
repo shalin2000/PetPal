@@ -123,35 +123,37 @@ class Reminders extends Component {
 
                 {/* calender with reminders */}
                 <div class="container center">
-                      <div class="row justify-content-center" >
-                        <Calendar
-                           
-                            onChange={e => this.reminderDate(e)}
-                            value={this.state.value}
-                            style={{ width: '200px!important', marginRight: '20px'}}
-                            active="false"
-                        />
-                       
-                    </div>  
-                    
-                    {/* */}
-                    <div class="row justify-content-center">
-                        <h3 style={{ fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center', paddingTop: '20px' }}>Today: {date}</h3>
-                        <div class="col-md-auto my-auto" >
-                            <button
-                                type="button"
-                                class="btn btn-primary"
-                                style={{ justifyContent: 'center', marginTop: '20px' }}
-                                onClick={this.handleReminderOpen.bind(this)}
-                            >Add Reminder Manually</button>
+                    <div>
+                        <div class="row justify-content-center" >
+                            <Calendar
+                            
+                                onChange={e => this.reminderDate(e)}
+                                value={this.state.value}
+                                style={{ width: '200px!important', height: '200px!important', marginRight: '20px'}}
+                                active="false"
+                            />
+                        
+                        </div>  
+                        
+                        {/* */}
+                        <div class="row justify-content-center">
+                            <h3 style={{ fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center', paddingTop: '20px' }}>Today: {date}</h3>
+                            <div class="col-md-auto my-auto" >
+                                <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    style={{ justifyContent: 'center', marginTop: '20px' }}
+                                    onClick={this.handleReminderOpen.bind(this)}
+                                >Add Reminder Manually</button>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center" id="list">
                         {/* loop through the reminders and add display them */}
                             {this.state.reminderList.map((reminder) => {
                                 return (
-                                    <div class="row justify-content-center" style={{ display: 'flex', width: '50%', padding: '45px' }}>
+                                    <div class="row justify-content-center" style={{ display: 'flex', width: '50%', padding: '45px'}}>
                                         <Toast className='toast' onClose={() => this.removeReminder(reminder)}>
                                             <Toast.Header className='toast-header'>
                                                 <strong className="mr-auto" style={{ fontSize: '22px' }}>{reminder.title}</strong>

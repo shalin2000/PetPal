@@ -9,7 +9,7 @@ import Header from './Header';
 import NewReminder from './NewReminder';
 import NewPet from './NewPet'
 import Login from './Login'
-
+import {Link} from 'react-router-dom';
 
 
 class Profile extends Component {
@@ -221,6 +221,13 @@ class Profile extends Component {
                                     onClick={this.handlePetOpen.bind(this)}
                                     >Add pets
                                 </button>
+                                &nbsp;
+                                &nbsp;
+                                <Link to={{pathname: "/reminders"}}
+                                    id="view-btn"
+                                    class="btn btn-primary" 
+                                    >View reminders
+                                </Link>
                             </div>
                         </div>
                     </div>
