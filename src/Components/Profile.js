@@ -185,7 +185,7 @@ class Profile extends Component {
             <div class="profile">
                 {/* uses the header.js file to get the burger menu */}
                 <Header />
-                <div class="row justify-content-center">
+                {/* <div class="row justify-content-center">
                     <button 
                         id="log-btn"
                         type="button" 
@@ -197,7 +197,7 @@ class Profile extends Component {
                     <Modal  show={this.state.loginOpen} onHide={this.handleClose.bind(this)}>
                         <Login handleClose={this.handleClose.bind(this)}/>
                     </Modal>
-                </div>
+                </div> */}
                 
 
                 {/* user profile card */}

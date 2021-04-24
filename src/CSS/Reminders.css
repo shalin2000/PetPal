@@ -27,8 +27,9 @@
     text-align: left;
 }
 
-.container {
+.twoSide {
     display: flex;
+    padding-left: 2%;
 }
 
 .btn-primary{
@@ -47,7 +48,6 @@
 .toast{
     background:#697184!important; 
     color:aliceblue;
-  
 }
 
 .toast-header{

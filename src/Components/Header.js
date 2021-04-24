@@ -3,7 +3,7 @@ import '../CSS/Header.css';
 import {Link} from 'react-router-dom';
 import { elastic as Menu } from 'react-burger-menu'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faBell, faQuestion, faSearch, faPaw } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faBell, faQuestion, faSearch, faPaw, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 class Header extends Component {
     render(){
@@ -20,6 +20,10 @@ class Header extends Component {
                     <Link to={{pathname: "/reminders"}} className="menu-item"> <FontAwesomeIcon icon={ faBell } size={40}/>&nbsp; View Reminders </Link>
 
                     <Link to={{pathname: "/faq"}} className="menu-item"> <FontAwesomeIcon icon={ faQuestion } size={40}/>&nbsp; FAQ </Link>
+
+                    <div style={{position: 'absolute', bottom: '80px'}}>Signed in as: John Doe</div>
+
+                    <Link to={"#"} className="menu-item" style={{position: 'absolute', bottom: '40px'}}> <FontAwesomeIcon icon={ faSignOutAlt } size={40}/>&nbsp; Log out </Link>
 
                 </Menu>
 

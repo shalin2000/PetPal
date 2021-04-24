@@ -5,6 +5,7 @@ body {
 #App {
   font-family: sans-serif;
   height: 100vh;
+  /* padding-bottom: 30px */
 }
 
 .header hr {

@@ -85,7 +85,7 @@ class SelectedSnakeInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Housing</Card.Header>
                         <Card.Body>
@@ -101,7 +101,7 @@ class SelectedSnakeInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Diet</Card.Header>
                         <Card.Body>
@@ -117,7 +117,7 @@ class SelectedSnakeInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Warning signs</Card.Header>
                         <Card.Body>

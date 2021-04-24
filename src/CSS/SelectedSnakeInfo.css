@@ -36,6 +36,7 @@ li {
 .new-pet-form{
     background: #697184;
     border-radius: 15px;
+    color: whitesmoke;
 }
 
 /* content of form  */
@@ -62,4 +63,8 @@ li {
 .form-buttons:hover{
     background:cornsilk!important;
     color: black !important;
+}
+
+.categoryInfoCard:hover {
+    box-shadow: 10px 5px 5px salmon;
 }

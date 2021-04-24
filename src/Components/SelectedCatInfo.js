@@ -125,7 +125,7 @@ class SelectedCatInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Unqiueness</Card.Header>
                         <Card.Body>
@@ -141,7 +141,7 @@ class SelectedCatInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Training</Card.Header>
                         <Card.Body>
@@ -157,7 +157,7 @@ class SelectedCatInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Diet</Card.Header>
                         <Card.Body>
@@ -173,7 +173,7 @@ class SelectedCatInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Grooming</Card.Header>
                         <Card.Body>
@@ -189,7 +189,7 @@ class SelectedCatInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Supplies</Card.Header>
                         <Card.Body>

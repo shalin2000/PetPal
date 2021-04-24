@@ -109,7 +109,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Commitment</Card.Header>
                         <Card.Body>
@@ -125,7 +125,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Personality</Card.Header>
                         <Card.Body>
@@ -142,7 +142,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Price</Card.Header>
                         <Card.Body>
@@ -158,7 +158,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Toys</Card.Header>
                         <Card.Body>
@@ -174,7 +174,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Cage</Card.Header>
                         <Card.Body>
@@ -190,7 +190,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Food</Card.Header>
                         <Card.Body>
@@ -206,7 +206,7 @@ class SelectedBirdInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Grooming</Card.Header>
                         <Card.Body>

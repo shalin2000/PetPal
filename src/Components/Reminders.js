@@ -122,8 +122,8 @@ class Reminders extends Component {
                 <h2 style={{ textAlign: 'center', paddingTop: '1%', paddingBottom: '1%' }}>Reminders</h2>
 
                 {/* calender with reminders */}
-                <div class="container center">
-                    <div>
+                <div class="row justify-content-center">
+                    <div class="col">
                         <div class="row justify-content-center" >
                             <Calendar
                             
@@ -137,7 +137,7 @@ class Reminders extends Component {
                         
                         {/* */}
                         <div class="row justify-content-center">
-                            <h3 style={{ fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center', paddingTop: '20px' }}>Today: {date}</h3>
+                            {/* <h3 style={{ fontWeight: 'bold', textDecoration: 'underline', textAlign: 'center', paddingTop: '20px' }}>Today: {date}</h3> */}
                             <div class="col-md-auto my-auto" >
                                 <button
                                     type="button"
@@ -149,7 +149,7 @@ class Reminders extends Component {
                         </div>
                     </div>
 
-                    <div class="row justify-content-center" id="list">
+                    <div class="col" id="list">
                         {/* loop through the reminders and add display them */}
                             {this.state.reminderList.map((reminder) => {
                                 return (

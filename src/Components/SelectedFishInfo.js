@@ -88,7 +88,7 @@ class SelectedFishInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Commitment</Card.Header>
                         <Card.Body>
@@ -104,7 +104,7 @@ class SelectedFishInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Aquarium</Card.Header>
                         <Card.Body>
@@ -120,7 +120,7 @@ class SelectedFishInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Cleaning</Card.Header>
                         <Card.Body>
@@ -136,7 +136,7 @@ class SelectedFishInfo extends Component {
                         key={idx}
                         text={variant.toLowerCase() === 'light' ? 'dark' : 'white'}
                         style={{ width: '18rem' }}
-                        className="mb-2"
+                        className="mb-2 categoryInfoCard"
                         >
                         <Card.Header>Food</Card.Header>
                         <Card.Body>
