@@ -1,70 +1,71 @@
-.selectedPetInfo{
-    background-color: #A9B7C0;
-    min-height: 100vh; /* will cover the 100% of viewport */
-    /* text-align: center; */
-    overflow: hidden;
-    display: block;
-    position: relative;
-    padding-bottom: 50px; /* height of your footer */  
+.selectedPetInfo {
+  background-color: #a9b7c0;
+  min-height: 100vh; /* will cover the 100% of viewport */
+  /* text-align: center; */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 50px; /* height of your footer */
 }
 
 .petImg {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
-.petName{
-    font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 10px;
-    color: tan;
+.petName {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 10px;
+  color: tan;
 }
 
 .my-auto {
-    margin-top: auto;
-    margin-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.new-pet-form{
-    background: #697184;
-    border-radius: 15px;
-    color: whitesmoke;
+.new-pet-form {
+  background: #697184;
+  border-radius: 15px;
+  color: whitesmoke;
 }
 
 /* content of form  */
-.modal-content{
-    border-radius: 15px!important;
-    color:black;
+.modal-content {
+  border-radius: 15px !important;
+  color: black;
 }
 
-.h4{
-    font-size: 34px!important;
-    font-weight: bold;   
+.h4 {
+  font-size: 34px !important;
+  font-weight: bold;
 }
 
-.form-label{
-    font-size: 32px!important;
-    font-weight:400; 
+.form-label {
+  font-size: 32px !important;
+  font-weight: 400;
 }
 
 /* close button on form */
-.form-buttons{
-    background:salmon!important;
+.form-buttons {
+  background: salmon !important;
 }
 
-.form-buttons:hover{
-    background:cornsilk!important;
-    color: black !important;
+.form-buttons:hover {
+  background: cornsilk !important;
+  color: black !important;
 }
 
 .categoryInfoCard:hover {
-    box-shadow: 10px 5px 5px salmon;
+  box-shadow: 10px 5px 5px salmon;
+  cursor: pointer;
 }

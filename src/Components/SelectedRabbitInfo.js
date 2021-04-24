@@ -34,7 +34,7 @@ class SelectedRabbitInfo extends Component {
                     <Modal.Body>
                         {this.state.whichModal === "Training" ? 
                         <div>
-                            <li>To make the rabbit trust you, lead it towardss yourself with treats while calling his name. Repeat this twice a day
+                            <li>To make the rabbit trust you, lead it towards yourself with treats while calling his name. Repeat this twice a day
                                 in a calm environment where it won't get startled. This builds up its confidence to be near you and trains it to come
                                 whenever it hears you call its name. Be wary of signs of stress such as freezing in place or trying to leave and stop
                                 the session if this happens. To litter train the rabbit place the box in a desired spot and limit them from moving too
