@@ -7,6 +7,9 @@ import '../CSS/Reminders.css';
 import Header from './Header';
 import 'react-calendar/dist/Calendar.css';
 import NewReminder from './NewReminder'
+import Card from "react-bootstrap/Card";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCross, faInfo, faWindowClose } from '@fortawesome/free-solid-svg-icons'
 
 class Reminders extends Component {
 
@@ -123,7 +126,7 @@ class Reminders extends Component {
 
                 {/* calender with reminders */}
                 <div class="row justify-content-center">
-                    <div class="col">
+                    <div class="col-4">
                         <div class="row justify-content-center" >
                             <Calendar
                             
@@ -149,17 +152,35 @@ class Reminders extends Component {
                         </div>
                     </div>
 
-                    <div class="col" id="list">
+                    {/* <div class="row justify-content-center"> */}
+                        <div class="col-4 text-center list">
                         {/* loop through the reminders and add display them */}
                             {this.state.reminderList.map((reminder) => {
                                 return (
-                                    <div class="row justify-content-center" style={{ display: 'flex', width: '50%', padding: '45px'}}>
-                                        <Toast className='toast' onClose={() => this.removeReminder(reminder)}>
-                                            <Toast.Header className='toast-header'>
-                                                <strong className="mr-auto" style={{ fontSize: '22px' }}>{reminder.title}</strong>
-                                                <small>{moment(reminder.date).fromNow()}</small>
-                                            </Toast.Header>
-                                            <Toast.Body style={{ textAlign: 'left' }}>
+                                    <div class="row justify-content-center" style={{width: '95%', marginLeft: '20px'}}>
+                                        <Card
+                                            style={{ width: '90%'}}
+                                            className="mb-2"
+                                        >
+                                        <Card.Header style={{backgroundColor: 'rgb(212,228,243)', textAlign: "left"}}>
+                                            <div class="row">
+                                            <div class="col-8" style={{width: '150px'}}>
+                                                <div class="row" style={{wordWrap: 'break-word'}}>
+                                                    <strong style={{ fontSize: '22px' }}>{reminder.title}</strong>
+                                                </div>
+                                                <div class="row">
+                                                    <small>{moment(reminder.date).fromNow()}</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div style={{marginLeft: '80px', marginTop: '-10px', cursor: 'pointer'}} onClick={() => this.removeReminder(reminder)}>
+                                                <FontAwesomeIcon icon={ faWindowClose } size={40} color="black"/>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </Card.Header>
+                                        <Card.Body style={{backgroundColor: 'rgb(105,113,130)'}}>
+                                            <Card.Text style={{textAlign: "left"}}>
                                                 <div className='reminderDesc'>
                                                     <label style={{ fontWeight: 'bold', color:'black' }}>Task:</label>
                                                     <p style={{ fontSize: '20px' }}>{reminder.description}</p>
@@ -168,19 +189,39 @@ class Reminders extends Component {
                                                     <label style={{ fontWeight: 'bold', color:'black' }}> When:</label>
                                                     <p style={{ fontWeight: 'inherit', fontSize: '20px' }}>{reminder.date + " at " + reminder.time}</p>
                                                 </div>
-                                            </Toast.Body>
-                                        </Toast>
+                                            </Card.Text>
+                                        </Card.Body>
+                                        </Card>
                                     </div>
+                                    // <div class="row justify-content-center" style={{width: '800px', paddingLeft: '45px', paddingBottom: '45px', paddingRight: '45px', marginLeft: '-200px'}}>
+                                    //     <Toast className='toast' onClose={() => this.removeReminder(reminder)}>
+                                    //         <Toast.Header className='toast-header'>
+                                    //             <strong className="mr-auto" style={{ fontSize: '22px' }}>{reminder.title}</strong>
+                                    //             <small>{moment(reminder.date).fromNow()}</small>
+                                    //         </Toast.Header>
+                                    //         <Toast.Body style={{ textAlign: 'left' }}>
+                                    //             <div className='reminderDesc'>
+                                    //                 <label style={{ fontWeight: 'bold', color:'black' }}>Task:</label>
+                                    //                 <p style={{ fontSize: '20px' }}>{reminder.description}</p>
+                                    //             </div>
+                                    //             <div>
+                                    //                 <label style={{ fontWeight: 'bold', color:'black' }}> When:</label>
+                                    //                 <p style={{ fontWeight: 'inherit', fontSize: '20px' }}>{reminder.date + " at " + reminder.time}</p>
+                                    //             </div>
+                                    //         </Toast.Body>
+                                    //     </Toast>
+                                    // </div>
                                 )
                             })}
 
-                        <Modal show={this.state.addReminderOpen} onHide={this.handleClose.bind(this)}>
-                            <NewReminder 
-                                handleClose={this.handleClose.bind(this)} 
-                                addReminder={this.handleNewReminder.bind(this)}
-                                selectedDate={this.state.value} />
-                        </Modal>
-                    </div>
+                            <Modal show={this.state.addReminderOpen} onHide={this.handleClose.bind(this)}>
+                                <NewReminder 
+                                    handleClose={this.handleClose.bind(this)} 
+                                    addReminder={this.handleNewReminder.bind(this)}
+                                    selectedDate={this.state.value} />
+                            </Modal>
+                        </div>
+                    {/* </div> */}
                 </div>
             </div>
         )

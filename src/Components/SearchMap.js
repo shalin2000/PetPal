@@ -7,7 +7,7 @@ import Header from './Header';
 import MapImg from '../Images/MapImg.png'
 import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faBell, faQuestion, faSearch, faPaw, faMapMarked, faMap, faMapPin, faMapMarkerAlt, faClock, faMask, faFirstAid, faInfo } from '@fortawesome/free-solid-svg-icons'
+import { faMapMarkerAlt, faClock, faMask, faFirstAid, faInfo } from '@fortawesome/free-solid-svg-icons'
 import { blue } from '@material-ui/core/colors';
 
 class SearchMap extends Component {
