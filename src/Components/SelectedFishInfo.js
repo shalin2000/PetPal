@@ -32,6 +32,7 @@ class SelectedFishInfo extends Component {
                     <Modal.Title>{this.state.whichModal}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        {/* https://www.thepetexpress.co.uk/blog/blog-new-products/the-beginners-guide-to-keeping-fish/ */}
                         {this.state.whichModal === "Commitment" ? 
                         <div>
                             <li>Cheaper to look after than other pets, without the big food costs and vet bills.</li>

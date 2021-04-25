@@ -74,6 +74,7 @@ class SelectedDogInfo extends Component {
                     :
                     null }
                     {/* ---------- For Husky ---------- */}
+                    {/* https://alphatraineddog.com/tips-on-training-a-husky-puppy/#:~:text=Start%20by%20teaching%20your%20husky,puppy%20into%20the%20desired%20position. */}
                     {this.state.breed.value === "Husky" ?
                         <div>
                             <div>
@@ -144,6 +145,7 @@ class SelectedDogInfo extends Component {
                     :
                     null }
                     {/* ---------- For German Shepard ---------- */}
+                    {/* https://www.akc.org/expert-advice/dog-breeds/10-facts-german-shepherd-dogs/ */}
                     {this.state.breed.value === "German Shepard" ?
                         <div>
                             <div>

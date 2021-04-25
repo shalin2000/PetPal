@@ -31,6 +31,7 @@ class SelectedBirdInfo extends Component {
                     <Modal.Title>{this.state.whichModal}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
+                        {/* https://www.thepetexpress.co.uk/blog/blog-new-products/the-beginners-guide-to-keeping-fish/ */}
                         {this.state.whichModal === "Commitment" ? 
                         <div>
                             <li>Birds need continual stimulation in their habitats and some birds can become frustrated or bored if they are not allowed time out of their habitat every day for interaction. You should set aside a specific time for you and your bird to interact and play with toys for instance.</li>
