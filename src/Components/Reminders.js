@@ -23,7 +23,7 @@ class Reminders extends Component {
                     title: 'Trev & Amy',
                     description: 'Feed Trev and Amy',
                     date: '2021-04-02',
-                    time: '12:00, 17:00 pm'
+                    time: '12:00, 17:00'
                 },
                 {
                     title: 'Trev & Amy',
@@ -31,7 +31,6 @@ class Reminders extends Component {
                     date: '2021-05-02',
                     time: '18:00'
                 }
-
             ],
         };
         this.removeReminder = this.removeReminder.bind(this);
