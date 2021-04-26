@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/PetPal/static/css/main.076cb5a3.chunk.css",
+    "main.js": "/PetPal/static/js/main.ea639538.chunk.js",
+    "main.js.map": "/PetPal/static/js/main.ea639538.chunk.js.map",
+    "runtime-main.js": "/PetPal/static/js/runtime-main.553f39ef.js",
+    "runtime-main.js.map": "/PetPal/static/js/runtime-main.553f39ef.js.map",
+    "static/css/2.c2ee9ce0.chunk.css": "/PetPal/static/css/2.c2ee9ce0.chunk.css",
+    "static/js/2.d701bdc4.chunk.js": "/PetPal/static/js/2.d701bdc4.chunk.js",
+    "static/js/2.d701bdc4.chunk.js.map": "/PetPal/static/js/2.d701bdc4.chunk.js.map",
+    "static/js/3.0757e06e.chunk.js": "/PetPal/static/js/3.0757e06e.chunk.js",
+    "static/js/3.0757e06e.chunk.js.map": "/PetPal/static/js/3.0757e06e.chunk.js.map",
+    "index.html": "/PetPal/index.html",
+    "static/css/2.c2ee9ce0.chunk.css.map": "/PetPal/static/css/2.c2ee9ce0.chunk.css.map",
+    "static/css/main.076cb5a3.chunk.css.map": "/PetPal/static/css/main.076cb5a3.chunk.css.map",
+    "static/js/2.d701bdc4.chunk.js.LICENSE.txt": "/PetPal/static/js/2.d701bdc4.chunk.js.LICENSE.txt",
+    "static/media/GermanShepard.3bfdc4e8.png": "/PetPal/static/media/GermanShepard.3bfdc4e8.png",
+    "static/media/Husky1.4f0fb8d8.png": "/PetPal/static/media/Husky1.4f0fb8d8.png",
+    "static/media/MapImg.01e5cc2c.png": "/PetPal/static/media/MapImg.01e5cc2c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.553f39ef.js",
+    "static/css/2.c2ee9ce0.chunk.css",
+    "static/js/2.d701bdc4.chunk.js",
+    "static/css/main.076cb5a3.chunk.css",
+    "static/js/main.ea639538.chunk.js"
+  ]
+}
