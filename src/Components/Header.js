@@ -21,7 +21,7 @@ class Header extends Component {
 
                     <Link to={{pathname: "/faq"}} className="menu-item"> <FontAwesomeIcon icon={ faQuestion } size={40}/>&nbsp; FAQ </Link>
 
-                    <div style={{position: 'absolute', bottom: '80px'}}>Signed in as: John Doe</div>
+                    <div className="jDoe" style={{position: 'absolute', bottom: '80px'}}>Signed in as: John Doe</div>
 
                     <Link to={"#"} className="menu-item" style={{position: 'absolute', bottom: '40px'}}> <FontAwesomeIcon icon={ faSignOutAlt } size={40}/>&nbsp; Log out </Link>
 

@@ -22,14 +22,14 @@ class Reminders extends Component {
                 {
                     title: 'Trev & Amy',
                     description: 'Feed Trev and Amy',
-                    date: '4/2/21',
-                    time: '12:00 pm, 5:00 pm'
+                    date: '2021-04-02',
+                    time: '12:00, 17:00 pm'
                 },
                 {
                     title: 'Trev & Amy',
                     description: 'Take Trev and Amy on a walk',
-                    date: '5/2/21',
-                    time: '6:00 pm'
+                    date: '2021-05-02',
+                    time: '18:00'
                 }
 
             ],
